@@ -7,6 +7,8 @@ class onetwo{
         double x=(e*d - b*f)/(a*d - b*c), y=(a*f - e*c)/(a*d - b*c);
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println(df.format(x)+" "+df.format(y));
+        System.out.println(df.format(x+y));
+
     }
 }
 /*  taken reference about making #.## decimal as output from link
