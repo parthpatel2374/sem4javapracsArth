@@ -1,6 +1,6 @@
 import java.text.DecimalFormat;
 
-class two{    
+class two1{    
     public static void main(String arg[]) {
         double a=3.4, b=50.2, e=44.5, c=2.1, d=0.55, f=5.9;
         

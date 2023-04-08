@@ -1,4 +1,4 @@
-class four {
+class four2 {
     public static void main(String arg[]){
         int op1 = Integer.parseInt(arg[0]);
         int op2 = Integer.parseInt(arg[2]);

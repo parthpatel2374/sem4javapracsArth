@@ -1,7 +1,7 @@
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
-class three {
+class three1 {
     public static void main(String arg[]){    
         System.out.println("Enter the number in meters;");
         Scanner sc = new Scanner(System.in);

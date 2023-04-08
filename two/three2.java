@@ -1,4 +1,4 @@
-class three {
+class three2 {
     public static void main(String arg[]){
         int arr[][] = new int[4][];
         for(int i=1; i<5; i++){
