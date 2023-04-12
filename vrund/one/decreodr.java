@@ -7,8 +7,7 @@ class decreodr {
 		int[] a = new int[3];
 		for (int i = 0; i < 3; i++) {
 			a[i] = v.nextInt();
-			System.out.println(a[i]);
-		}
+			}		
 		int temp;
 		for (int i = 0; i < 3; i++) {
 			for (int j = 0; j < 2; j++) {
