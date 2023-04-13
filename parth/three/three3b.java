@@ -13,25 +13,40 @@ class Student {
 
     // Search function
     public static void search(Student[] arr, String nam, int n){
-        for(int i=0; i<n; i++){
-            if(arr[i].name.equals(nam)){
-                printarr(arr, i);
-            }
-        }
+	int count=0;        
+	for(int i=0; i<n; i++){
+            		if(arr[i].name.equals(nam)){
+                		printarr(arr, i);
+		count++;
+            		}
+	}
+	if(count == 0){
+		System.out.println("404:Data-not-found/databaseInvalidError");
+	}
     }
     public static void search(Student[] arr, int roll, int n){
+	int count=0;
         for(int i=0; i<n; i++){
             if(arr[i].rollNumber == roll){
                 printarr(arr, i);
+	count++;
             }
         }
+	if(count == 0){
+		System.out.println("404:Data-not-found/databaseInvalidError");
+	}
     }
     public static void search(Student[] arr, int roll, String cit, int n){
+	count++;
         for(int i=0; i<n; i++){
             if(arr[i].rollNumber == roll && arr[i].city.equals(cit)){
                 printarr(arr, i);
+	count++;
             }
         }
+	if(count == 0){
+		System.out.println("404:Data-not-found/databaseInvalidError");
+	}
     }
     public static void printarr(Student arr[], int i){
         System.out.print(arr[i].rollNumber+", ");
