@@ -6,9 +6,9 @@ class four2 {
         switch(arg[1]){
             case "=":
                 if(op1==op2)
-                    System.out.println("Both values are same.");
+                    System.out.println("true");
                 else{
-                    System.out.println("Both values are different.");
+                    System.out.println("false");
                 }
                 break;
             case ">":
@@ -28,20 +28,20 @@ class four2 {
                 }
                 break;
             case "+":
-                System.out.println((op1+op2));
+                System.out.println("operator1 + operator2 = "+(op1+op2));
                 break;
             case "-":
-                System.out.println((op1-op2));
+                System.out.println("operator1 - operator2 = "+(op1-op2));
                 break;
-            case "*":
-                System.out.println((op1*op2));
+            case "x":
+                System.out.println("operator1 x operator2 = "+(op1*op2));
                 break;
             case "/":
                 if(op2 == 0){
                     System.out.println("Division not possible.");
                 }
                 else{   
-                    System.out.println(((double)op1/op2));
+                    System.out.println("operator1 / operator2 = "+((double)op1/op2));
                 }
                 break;
             default:

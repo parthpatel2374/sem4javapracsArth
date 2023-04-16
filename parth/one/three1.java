@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 
 class three1 {
     public static void main(String arg[]){    
-        System.out.println("Enter the number in meters;");
+        System.out.print("Enter the number in meters : ");
         Scanner sc = new Scanner(System.in);
         
         double num = sc.nextDouble();

@@ -3,25 +3,15 @@ import java.util.Scanner;
 class four1 {
     public static void main(String arg[]){
         Scanner sc = new Scanner(System.in);
-        int arr[] = new int[3];
+        System.out.print("Enter any letter : ");
+        char let = sc.next().toLowerCase().charAt(0);
         
-        System.out.println("Enter three numbers:");
-        for(int i=0; i<3; i++){
-            arr[i] = sc.nextInt();
+        if(let == 'a' || let == 'e' || let == 'i' || let == 'o' || let == 'u'){
+            System.out.println("Entered character is a vovel.");
         }
-        for(int j=0; j<3; j++){
-            for(int i=0; i<2; i++){
-                if(arr[i+1] > arr[i]){
-                    int temp = arr[i+1];
-                    arr[i+1] = arr[i];
-                    arr[i] = temp;
-                }    
-            }
+        else{
+            System.out.println("Entered character is a consonant.");
         }
-        for(int i=0; i<3; i++){
-            System.out.print(arr[i]+" ");
-        }
-        System.out.println();
         sc.close();
     }    
 }

@@ -1,93 +1,112 @@
-import java.util.ArrayList;
+import java.util.Scanner;
 
 class Student {
-    private int rollNumber;
-    private String name;
-    private String city;
+    int rollNumber;
+    String name;
+    String city;
 
-    // Constructor
-    public Student(int rollNumber, String name, String city) {
-        this.rollNumber = rollNumber;
+    Student(int rollno, String name, String city){
+        this.rollNumber = rollno;
         this.name = name;
         this.city = city;
     }
 
-    // Getters
-    public int getRollNumber() {
-        return rollNumber;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    // Overloaded search method
-    public static ArrayList<Student> search(ArrayList<Student> students, int rollNumber) {
-        ArrayList<Student> results = new ArrayList<Student>();
-        for (Student student : students) {
-            if (student.getRollNumber() == rollNumber) {
-                results.add(student);
+    // Search function
+    public static void search(Student[] arr, String nam, int n){
+        int count=0;        
+        for(int i=0; i<n; i++){
+            if(arr[i].name.equals(nam)){
+                printFound(arr, i);
+                count++;
             }
         }
-        return results;
+        if(count == 0){
+            System.out.println("404:Data-not-found/databaseInvalidError");
+        }
     }
-
-    public static ArrayList<Student> search(ArrayList<Student> students, String name) {
-        ArrayList<Student> results = new ArrayList<Student>();
-        for (Student student : students) {
-            if (student.getName().equals(name)) {
-                results.add(student);
+    public static void search(Student[] arr, int roll, int n){
+	int count=0;
+        for(int i=0; i<n; i++){
+            if(arr[i].rollNumber == roll){
+                printFound(arr, i);
+	            count++;
             }
         }
-        return results;
+        if(count == 0){
+            System.out.println("404:Data-not-found/databaseInvalidError");
+        }       
     }
-
-    public static ArrayList<Student> search(ArrayList<Student> students, String name, String city) {
-        ArrayList<Student> results = new ArrayList<Student>();
-        for (Student student : students) {
-            if (student.getName().equals(name) && student.getCity().equals(city)) {
-                results.add(student);
-                results.toString();
+    public static void search(Student[] arr, int roll, String cit, int n){
+	    int count=0;
+        for(int i=0; i<n; i++){
+            if(arr[i].rollNumber == roll && arr[i].city.equals(cit)){
+                printFound(arr, i);
+	            count++;
             }
         }
-        return results;
+        if(count == 0){
+            System.out.println("404:Data-not-found/databaseInvalidError");
+        }
+    }
+    public static void printFound(Student arr[], int i){
+        System.out.print(arr[i].rollNumber+", ");
+        System.out.print(arr[i].name+", ");
+        System.out.println(arr[i].city);
+    }
+    public static void printWholearray(Student arr[], int n){
+        System.out.println();
+        System.out.println("The provided database is;");    
+        for(int i=0; i<n; i++){
+            System.out.print(arr[i].rollNumber+" ");
+            System.out.print(arr[i].name+" ");
+            System.out.println(arr[i].city);
+        }
+        System.out.println();
     }
 }
-class three3 {
+class three3{
     public static void main(String arg[]){
 
-        ArrayList<Student> students = new ArrayList<Student>();
-        students.add(new Student(1, "parth", "kapadwanj"));
-        students.add(new Student(2, "jatin", "kapadwanj"));
-        students.add(new Student(3, "ullekh", "kapadwanj"));
-        students.add(new Student(4, "vrund", "lunavada"));
-        students.add(new Student(5, "kathan", "ahmedabad"));
-        students.add(new Student(6, "dip", "ahmedabad"));
-        students.add(new Student(7, "kishan", "ahmedabad"));
-        students.add(new Student(8, "chirag", "vadodra"));
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of students : ");
+        int n = sc.nextInt();
+        Student arr[] = new Student[n];
+        
+        System.out.println("Enter rollno, name and city of students;");
+        for(int i=0; i<n; i++){
+            arr[i] = new Student(sc.nextInt(), sc.next(), sc.next());
+        }
+        
+        Student.printWholearray(arr, n);
 
-        // Search for all students with rollno 1
-        ArrayList<Student> result = Student.search(students, 1);
-        for (Student student : result) {
-            System.out.println(student.getName());
-        }
-        
-        // Search for all students with the name "parth"
-        result = Student.search(students, "parth");
-        for (Student student : result) {
-            System.out.println(student.getName()); // Output: [Student@<hashcode>]
-        }
-        
-        // Search for all students in ahmedabad and name = "dip"
-        result = Student.search(students, "dip", "ahmedabad");
-        for (Student student : result) {
-            if (student.getName().equals("dip") && student.getCity().equals("ahmedabad") ) {
-            System.out.println(student.getName());
+        System.out.println("N/n for name.search,");
+        System.out.println("R/r for rollno.search,");
+        System.out.println("C/c for rollno&city.search,");
+        System.out.println("E/e to exit.");
+        char choice;
+
+        do{
+            System.out.println();
+            choice = sc.next().toLowerCase().charAt(0);
+            switch(choice){
+                case 'n':
+                    System.out.print("Enter name of student to be searched : ");
+                    String name = sc.next();
+                    Student.search(arr, name, n);
+                    break;
+                case 'r':
+                    System.out.print("Enter rollnumber of student to be searched : ");
+                    int roll = sc.nextInt();
+                    Student.search(arr, roll, n);
+                    break;
+                case 'c':
+                    System.out.print("Enter rollnumber and city of student to be searched : ");
+                    int rollno = sc.nextInt(); String city = sc.next();
+                    Student.search(arr, rollno, city, n);            
+                    break;
+                default:
             }
-        }
+        }while(choice != 'e');
+        sc.close();
     }
 }

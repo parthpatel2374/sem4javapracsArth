@@ -6,8 +6,8 @@ class two1{
         
         double x=(e*d - b*f)/(a*d - b*c), y=(a*f - e*c)/(a*d - b*c);
         DecimalFormat df = new DecimalFormat("#.##");
-        System.out.println(df.format(x)+" "+df.format(y));
-        System.out.println(df.format(x+y));
+        System.out.println("The equations are: (i)3.4x+50.2y=44.5 & (ii)2.1x+.55y=5.9");
+        System.out.println("Root1 = "+df.format(x)+" Root2 = "+df.format(y));
 
     }
 }

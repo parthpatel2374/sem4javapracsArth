@@ -1,3 +1,4 @@
+import java.util.Scanner;
 class polygon2{
     int length, bredth;
 
@@ -17,10 +18,17 @@ class polygon2{
 }
 class two3 {
     public static void main(String arg[]){
-        polygon2 square = new polygon2(10);
-        polygon2 rectangle = new polygon2(10, 20);
-
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the length of square : ");
+        int sqLenght = sc.nextInt();
+        polygon2 square = new polygon2(sqLenght);
         System.out.println("Area of square is : "+square.area());
+        System.out.println();
+        
+        System.out.print("Enter the length and bredth of rectangle : ");
+        int recLenght = sc.nextInt(), recBredth = sc.nextInt();
+        polygon2 rectangle = new polygon2(recLenght, recBredth);
         System.out.println("Area of rectangle is : "+rectangle.area());
-    }   
+        sc.close();
+    }
 }
