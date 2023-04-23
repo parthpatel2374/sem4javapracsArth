@@ -21,5 +21,6 @@ class valuexy
 		
 		System.out.println("value of x is " + x);
 		System.out.println("value of y is " + y);
+		v.close();
 	}
 }

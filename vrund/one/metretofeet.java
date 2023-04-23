@@ -9,5 +9,6 @@ class metretofeet
 		float a= v.nextFloat();
 		double b= a*3.28084;
 		System.out.println(a + "meter is equal to " +  b + " feet");
+		v.close();
 	}
 }
