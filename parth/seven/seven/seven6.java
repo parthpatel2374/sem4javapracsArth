@@ -1,78 +1,17 @@
-import java.util.ArrayList;
+package seven;
 import java.util.Scanner;
 
-class stack<T>{
-
-    ArrayList<T> obj;
-    int top = -1, size;
-    
-    stack(){
-        this.obj = new ArrayList<T>();
-    }
-
-    void setSize(int size){
-        this.size = size;
-    }
-
-    void push(T ob_to_push){
-        if(top == size - 1){
-            System.out.println("Stack owerflow.");
-        }
-        else
-        {    
-            obj.add(++top, ob_to_push);;
-        }
-    }
-
-    T pop(){
-        if(top == -1){
-            System.out.println("Stack underflow.");
-            return null;
-        }
-        else{
-            T temp = obj.get(top);
-            obj.remove(top--);
-            return temp;
-        }
-    }
-    
-    T peek(){
-        if(top == -1){
-            System.out.println("Stack underflow.");
-            return null;
-        }
-        else{
-            return obj.get(top);
-        }
-    }
-
-    void printStack(){
-        System.out.println(obj);
-    }
-
-    boolean isEmpty(){
-        if(top == -1){ return true;}
-        else{ return false;}
-    }
-   
-    boolean isFull(){
-        if(top == size - 1){ return true;}
-        else{ return false;}
-    }
-}
 
 public class seven6 {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
 
-        stack<Double> stack1 = new stack<>();
-        stack<String> stack2 = new stack<>();
-
         System.out.print("Give total size of stack: ");
         int size = sc.nextInt();
-        stack1.setSize(size);
-        stack2.setSize(size);
+
+        stack<Double> stack1 = new stack<>(size);
+        //stack<String> stack2 = new stack<>(size);
         
 outerLabel:
     for(int iterator=0; iterator<5; iterator++){
@@ -120,7 +59,7 @@ label1: for(int i=0; i<20; i++){
             }
         }
             break;
-        
+/**        
         case 2:
 label2: for(int i=0; i<20; i++){
             System.out.println("1. Push,\n2. Pop,\n3. Peek.");
@@ -160,10 +99,12 @@ label2: for(int i=0; i<20; i++){
         }
             break;
 
+*/
         case 999:
             break outerLabel;
         }
     }
+
         sc.close();
     }
 }

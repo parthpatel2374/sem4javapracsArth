@@ -11,6 +11,8 @@ class b extends a{
         val1b = p;
         val2b = q;
     }
+    public static void push(double d) {
+    }
 }
 class c extends b{
     int val1c, val2c, val3c;
