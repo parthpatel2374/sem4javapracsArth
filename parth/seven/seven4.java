@@ -31,11 +31,11 @@ Label:
                 break;
             
             case 2: 
-                System.out.println("QueueIs: "+queue.remove());
+                System.out.println("ElementRemovedIs: "+queue.remove());
                 break;
 
             case 3:
-                System.out.println("QueueIs: "+queue.peek());
+                System.out.println("ElementPeekedIs: "+queue.peek());
                 break;
             
             case 4:
@@ -59,7 +59,8 @@ Label:
                 queue1.offer(1);
                 queue1.offer(2);
                 queue.removeAll(queue1);
-                System.out.println("QueueIs: "+queue);
+                System.out.println("NewQueueIs: "+queue1);
+                System.out.println("OriginalQueueIs: "+queue);
                 break;
                 
             case 7:
@@ -67,7 +68,8 @@ Label:
                 queue2.offer(1);
                 queue2.offer(2);
                 queue.retainAll(queue2);
-                System.out.println("QueueIs: "+queue);
+                System.out.println("NewQueueIs: "+queue2);
+                System.out.println("OriginalQueueIs: "+queue);
                 break;
 
             case 8:

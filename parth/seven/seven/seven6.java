@@ -1,7 +1,6 @@
 package seven;
 import java.util.Scanner;
 
-
 public class seven6 {
     public static void main(String[] args) {
         
@@ -11,7 +10,7 @@ public class seven6 {
         int size = sc.nextInt();
 
         stack<Double> stack1 = new stack<>(size);
-        //stack<String> stack2 = new stack<>(size);
+        stack<String> stack2 = new stack<>(size);
         
 outerLabel:
     for(int iterator=0; iterator<5; iterator++){
@@ -59,7 +58,7 @@ label1: for(int i=0; i<20; i++){
             }
         }
             break;
-/**        
+
         case 2:
 label2: for(int i=0; i<20; i++){
             System.out.println("1. Push,\n2. Pop,\n3. Peek.");
@@ -99,7 +98,6 @@ label2: for(int i=0; i<20; i++){
         }
             break;
 
-*/
         case 999:
             break outerLabel;
         }

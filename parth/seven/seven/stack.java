@@ -9,6 +9,7 @@ public class stack<T>{
     
     stack(int number){
         this.obj = new ArrayList<T>(number);
+        this.size = number;
     }
 
     public void setSize(int size){
